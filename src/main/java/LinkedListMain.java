@@ -15,10 +15,7 @@ public class LinkedListMain {
         //llmain.list.popLast();
         llmain.list.insertNode(40,30);
 
-        Node n = llmain.list.head;
-        while(n != llmain.list.tail.next){
-            System.out.println(n.data);
-            n = n.next;
-        }
+        llmain.list.deleteNode(40);
+        System.out.println("Size of the list is : " + llmain.list.showSize());
     }
 }

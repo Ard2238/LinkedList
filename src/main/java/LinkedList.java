@@ -13,6 +13,7 @@ public class LinkedList {
         }
     }
 
+    /* UC5 - delete from begining */
     public void pop(){
         if(this.head == null)
             System.out.println("Linked List is Empty.");
@@ -24,6 +25,7 @@ public class LinkedList {
         }
     }
 
+    /* UC6 - delete at the end */
     public void popLast(){
         if(this.head == null)
             System.out.println("List is Empty.");
@@ -37,6 +39,7 @@ public class LinkedList {
         }
     }
 
+    /* UC7 - serach a value */
     public Node searchNode(int data){
         if(this.head == null) {
             System.out.println("List is empty");
@@ -50,6 +53,7 @@ public class LinkedList {
         }
     }
 
+    /* UC8 - insert a value */
     public boolean insertNode(int addData, int searchData){
         Node node = new Node(addData);
         Node searched = searchNode(searchData);
@@ -65,5 +69,23 @@ public class LinkedList {
             node.next = temp;
             return true;
         }
+    }
+
+    /* UC9 - delete a node */
+    public void deleteNode(int data){
+        Node temp = this.head;
+        while(temp.next.data != data)
+            temp = temp.next;
+        temp.next = temp.next.next;
+    }
+
+    public int showSize() {
+        int count = 1;
+        Node n = this.head;
+        while(n.next != null){
+            count++;
+            n = n.next;
+        }
+        return count;
     }
 }

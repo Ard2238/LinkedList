@@ -2,7 +2,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestLinkedList {
+public class TestDeleteNode {
     LinkedListMain testLL = new LinkedListMain();
 
     @Before
@@ -10,16 +10,7 @@ public class TestLinkedList {
         testLL.list.addNode(56);
         testLL.list.addNode(30);
         testLL.list.addNode(70);
-    }
-    @Test
-    public void testSearchNode(){
-        Node n = testLL.list.searchNode(30);
-        Assert.assertEquals(30, n.data);
-    }
-
-    @Test
-    public void testInsertNode(){
-        Assert.assertEquals(true, testLL.list.insertNode(40,30));
+        testLL.list.insertNode(40,30);
     }
 
     @Test
