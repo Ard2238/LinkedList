@@ -3,14 +3,17 @@ public class LinkedList {
 
     public void addNode(int data) {
         Node new_node = new Node(data);
-        if (this.head == null) {
+        if (this.head == null || this.head.data > data) {
+            new_node.next = head;
             this.head = new_node;
-            this.tail = new_node;
         }
         else{
-            this.tail.next = new_node;
-            this.tail = new_node;
+           SortedLinkedList.sortAndAdd(data, this.head);
         }
+        Node temp = this.head;
+        while(temp.next != null)
+            temp =temp.next;
+        tail = temp;
     }
 
     /* UC5 - delete from begining */
