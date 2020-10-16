@@ -7,12 +7,7 @@ public class LinkedListMain {
         linkedList.addNode(30);
         linkedList.addNode(70);
 
-        linkedList.pop();
-
-        Node n = linkedList.head;
-        while(n != null){
-            System.out.println(n.data);
-            n = n.next;
-        }
+        //linkedList.pop();
+        linkedList.popLast();
     }
 }
