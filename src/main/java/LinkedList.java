@@ -1,21 +1,26 @@
 public class LinkedList {
-    Node head;
+    Node head, tail;
 
-    public void addNode(int data){
+    public void addNode(int data) {
         Node new_node = new Node(data);
-        if(head == null)
+        if (head == null) {
             head = new_node;
+            tail = new_node;
+        }
         else{
-            Node itr = head;
-            if(data == 30){
-                itr = head.next;
-                head.next = new_node;
-                new_node.next = itr;
-            }else {
-                while(itr.next != null)
-                    itr = itr.next;
-                itr.next = new_node;
-            }
+            tail.next = new_node;
+            tail = new_node;
+        }
+    }
+
+    public void pop(){
+        if(head == null)
+            System.out.println("Linked List is Empty.");
+        else if(head != tail)
+            head = head.next;
+        else {
+            head = null;
+            tail = null;
         }
     }
 }
