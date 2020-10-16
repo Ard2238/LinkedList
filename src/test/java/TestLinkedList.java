@@ -15,4 +15,9 @@ public class TestLinkedList {
     public void testSearchNode(){
         Assert.assertEquals(30, testLL.list.searchNode(30));
     }
+
+    @Test
+    public void testInsertNode(){
+        Assert.assertEquals(true, testLL.list.insertNode(40,30));
+    }
 }

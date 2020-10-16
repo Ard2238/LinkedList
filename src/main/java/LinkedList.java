@@ -37,16 +37,33 @@ public class LinkedList {
         }
     }
 
-    public int searchNode(int data){
+    public Node searchNode(int data){
         if(this.head == null) {
             System.out.println("List is empty");
-            return -1;
+            return null;
         }
         else{
             Node itr = this.head;
             while(itr.data != data)
                 itr = itr.next;
-            return itr.data;
+            return itr;
+        }
+    }
+
+    public boolean insertNode(int addData, int searchData){
+        Node node = new Node(addData);
+        Node searched = searchNode(searchData);
+        if(searched == null) {
+            System.out.println("Node with value " + searchData + " doesn't exist");
+            return false;
+        }else if(searched.next == null) {
+            searched.next = node;
+            return true;
+        }else{
+            Node temp = searched.next;
+            searched.next = node;
+            node.next = temp;
+            return true;
         }
     }
 }
