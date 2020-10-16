@@ -1,13 +1,17 @@
 public class LinkedListMain {
+    LinkedList list;
+    public LinkedListMain(){
+        list = new LinkedList();
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to the Linked List Program");
 
-        LinkedList linkedList = new LinkedList();
-        linkedList.addNode(56);
-        linkedList.addNode(30);
-        linkedList.addNode(70);
+        LinkedListMain llmain = new LinkedListMain();
+        llmain.list.addNode(56);
+        llmain.list.addNode(30);
+        llmain.list.addNode(70);
 
         //linkedList.pop();
-        linkedList.popLast();
+        llmain.list.popLast();
     }
 }
