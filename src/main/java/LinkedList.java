@@ -7,9 +7,15 @@ public class LinkedList {
             head = new_node;
         else{
             Node itr = head;
-            while(itr.next != null)
-                itr = itr.next;
-            itr.next = new_node;
+            if(data == 30){
+                itr = head.next;
+                head.next = new_node;
+                new_node.next = itr;
+            }else {
+                while(itr.next != null)
+                    itr = itr.next;
+                itr.next = new_node;
+            }
         }
     }
 }
